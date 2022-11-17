@@ -4,6 +4,7 @@ import Landing from './pages/Landing';
 import VideoLogs from './pages/VideoLogs'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
+import VideoPage from './pages/VideoPage';
 
 function App() {
   return (
@@ -13,19 +14,19 @@ function App() {
        
         <Route path='/' element={
           <>
-            <Landing/>
+            <Landing />
           </>
-        }/>
+        } />
         <Route path='/upload' element={
-          <AdminUpload/>
-        }/>
+          <AdminUpload />
+        } />
         <Route path='/videoLogs' element={
-          <VideoLogs/>
-        }/>
+          <VideoLogs />
+        } />
         <Route path='/videoPage' element={
-          <VideoLogs/>
-        }/>
-        
+          <VideoPage title={"Video - 1: React with redux"} author={"Ankush Gupta"} />
+        } />
+
       </Routes>
     </BrowserRouter>
   );
