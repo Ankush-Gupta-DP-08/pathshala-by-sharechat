@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png'
 
 function Navbar() {
    
@@ -10,13 +11,14 @@ function Navbar() {
             <div className='w-1/5 h-[8px] bg-[#5C2E7E]'></div>
             <div className='w-1/5 h-[8px] bg-[#FFC23C]'></div>
             <div className='w-1/5 h-[8px] bg-[#F73D93]'></div>
-            
         </div>
-        <div className='flex items-center p-4 '>
-            <div className='w-2/3'></div>
-            <div className='flex w-1/3 space-x-8 mr-10 justify-end'>
-                <Link to='/upload' className='text-[#79B4B7] font-bold text-xl md:text-3xl'>Videos</Link> 
-                <Link to='/videoPage' className='text-[#79B4B7] font-bold text-xl md:text-3xl'>Blogs</Link>
+        <div className='flex items-center p-4 justify-between'>
+            <img src={logo} className='w-1/4' alt='Logo'></img>
+            
+            <div className='flex w-1/3 space-x-8 mr-10 justify-end z-100'>
+                <Link to='/' className='text-[#0D4C92] font-semibold text-md md:text-xl'>Home</Link> 
+                <Link to='/videoLogs' className='text-[#0D4C92] font-semibold text-md md:text-xl'>Videos</Link> 
+                <a href='https://sharechat.com/blogs' className='text-[#0D4C92] font-semibold text-md md:text-xl'>Blogs</a>
             </div>
         </div>
     </div>
