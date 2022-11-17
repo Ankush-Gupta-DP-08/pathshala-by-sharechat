@@ -6,6 +6,7 @@ const path = require("path");
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
+        console.log("here")
         if (!fs.existsSync("public")) {
             fs.mkdirSync("public");
         }
@@ -25,7 +26,6 @@ const upload = multer({
     storage: storage,
     fileFilter: function (req, file, cb) {
         var ext = path.extname(file.originalname);
-
         if (ext !== ".mkv" && ext !== ".mp4") {
             return cb(new Error("Only videos are allowed!"));
         }
@@ -44,7 +44,7 @@ router.post(
     "/create",
     upload.fields([
         {
-            name: "videos",
+            name: "video",
             maxCount: 5,
         },
     ]),

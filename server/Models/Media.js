@@ -2,15 +2,29 @@ const mongoose = require("mongoose");
 
 const MediaSchema = new mongoose.Schema(
     {
-        title: {
+        name: {
             type: String,
             required: true,
         },
-        author: {
+        email : {
             type: String,
-            required: true
+            required: true,
         },
-
+        tags: {
+            type: String
+        },
+        team: {
+            type: String,
+            required: true,
+        },
+        title:{
+            type: String,
+            required: true,
+        },
+        topic: {
+            type: String,
+            required: true,
+        },
         videos: [{ type: String }],
     },
     {
