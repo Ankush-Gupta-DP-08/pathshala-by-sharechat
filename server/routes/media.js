@@ -1,5 +1,5 @@
 const express = require("express");
-const mediaController = require("../controllers/mediaController");
+const mediaController = require("../controller/mediaController");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");

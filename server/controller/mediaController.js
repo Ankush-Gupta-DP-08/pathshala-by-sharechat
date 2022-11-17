@@ -12,7 +12,10 @@ exports.getAll = async (req, res) => {
 };
 // Backendurl/public/videos/file_name.mp4
 exports.create = async (req, res) => {
-    const { name } = req.body;
+    console.log(req.body);
+    const { name } = req.body.data;
+    const {email} = req.body.data;
+    
     let videosPaths = [];
 
     if (Array.isArray(req.files.videos) && req.files.videos.length > 0) {
