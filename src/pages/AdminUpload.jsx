@@ -83,10 +83,10 @@ function AdminUpload() {
                                 <p className="text-xs text-gray-500 dark:text-gray-400">MP4 or MKV</p>
                             </div>
                             <input id="dropzone-file" type="file" accept='.mp4, .mkv' className="hidden" onChange={(e)=>{
-                                setVideos(e.target.files);  
+                                setVideos(e.target.files);
                             }} />
                         </label>
-                    </div> 
+                    </div>
                     <div className='w-3/12 text-center shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded'><input type='submit'/></div>
                 </form>
                 <p className="text-center text-gray-500 text-xs">
