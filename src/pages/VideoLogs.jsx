@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Content from '../components/Content';
 import Option from '../components/Option'
 import './videoLogs.css'
 function VideoLogs() {
@@ -13,23 +14,39 @@ function VideoLogs() {
     const [optionSelected, setSelectedoption] = useState('Engineering');
     const [content, setContent] = useState([
         {
-            title: `title-1 + ${optionSelected}`,
+            videoTitle: `videoTitle-1 + ${optionSelected}`,
             author: `author-1 + ${optionSelected}`
         },
         {
-            title: `title-2 + ${optionSelected}`,
+            videoTitle: `videoTitle-2 + ${optionSelected}`,
             author: `author-2 + ${optionSelected}`
+        },
+        {
+            videoTitle: `videoTitle-3 + ${optionSelected}`,
+            author: `author-3 + ${optionSelected}`
+        },
+        {
+            videoTitle: `videoTitle-4 + ${optionSelected}`,
+            author: `author-4 + ${optionSelected}`
         }
     ]);
     useEffect(() => {
         setContent([
             {
-                title: `title-1 + ${optionSelected}`,
+                videoTitle: `videoTitle-1 + ${optionSelected}`,
                 author: `author-1 + ${optionSelected}`
             },
             {
-                title: `title-2 + ${optionSelected}`,
+                videoTitle: `videoTitle-2 + ${optionSelected}`,
                 author: `author-2 + ${optionSelected}`
+            },
+            {
+                videoTitle: `videoTitle-3 + ${optionSelected}`,
+                author: `author-3 + ${optionSelected}`
+            },
+            {
+                videoTitle: `videoTitle-4 + ${optionSelected}`,
+                author: `author-4 + ${optionSelected}`
             }
         ])
     }, [optionSelected])
@@ -41,8 +58,7 @@ function VideoLogs() {
     displayContent = content.map((con, index) => {
         return (
             <div key={index}>
-                <h1>{con.title}</h1>
-                <h2>{con.author}</h2>
+                <Content videoTitle={con.videoTitle} author={con.author} />
             </div>
         )
     })
