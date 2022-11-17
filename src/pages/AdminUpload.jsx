@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function AdminUpload() {
     const backent_url='http://localhost:4000';
-    const [data,setData]=useState({});
+     const [data,setData]=useState({});
     const [videos,setVideos]=useState([]);
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -16,7 +16,7 @@ function AdminUpload() {
             alert('Submitted Successfully')
         }).catch(error=>{alert("Error!!")});
     }
-
+    
     return (
         <div>
             <div className="w-2/3 m-auto text-left">
@@ -34,9 +34,13 @@ function AdminUpload() {
                         <label className="block text-gray-700 text-sm font-bold mb-2" for="password">
                             Team
                         </label>
-                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text" placeholder="Team Name" onChange={(e)=>{
-                            setData({...data,"team":e.target.value})
-                        }}/>
+                        <select className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e)=>{setData({...data,"team":e.target.value})}}>
+                            <option selected value="engineering">Engineering</option>
+                            <option value="product">Product</option>
+                            <option value="design">Design</option>
+                            <option value="ai_ml">AI / ML</option>
+                        </select>
+
                     </div>
                 </div>
                     <div className="mb-4">
