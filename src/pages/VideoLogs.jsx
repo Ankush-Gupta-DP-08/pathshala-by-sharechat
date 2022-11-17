@@ -8,7 +8,9 @@ function VideoLogs() {
         "Artificial Intelligence",
         "Product",
         "Design",
-        "Content & Creators"
+        "Content & Creators",
+        "Life at ShareChat",
+        "Corporate"
     ])
     let displayAllTitles, displayContent;
     const [optionSelected, setSelectedoption] = useState('Engineering');
