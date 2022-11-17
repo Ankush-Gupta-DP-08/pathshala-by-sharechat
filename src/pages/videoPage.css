@@ -1,0 +1,19 @@
+.title-1,
+.author-1 {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    margin: 2vw;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video {
+    width: 50%;
+    height: 60vh;
+}
