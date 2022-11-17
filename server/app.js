@@ -1,21 +1,31 @@
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const path = require("path");
 
-const express=require('express');
-const app=express();
+const app = express();
 
-app.use(express.json());
+app.use(cors());
 
+const mediaRoutes = require("./routes/media");
 
-const PORT=8000;
+app.use("/api/v1/media", mediaRoutes);
+app.use("/public", express.static(path.join(__dirname, "public")));
 
+const mongodbUri = "mongodb://localhost:27017/sharechatPathshala";
 
-
-app.get("/",(req,res)=>{
-       res.send("Welcome to home page app js");
+mongoose.connect(mongodbUri, {
+    useNewUrlParser: true,
 });
 
-console.log("Hi")
+mongoose.connection.on("connected", () => {
+    console.log("Connected to mongodb...");
+});
 
+mongoose.connection.on("error", (err) => {
+    console.log("Error connecting to mongo", err);
+});
 
-app.listen(PORT,()=>{
-    console.log(`Server is running at port no ${PORT}`);
+app.listen(4000, () => {
+    console.log("App is running on PORT 4000");
 });
