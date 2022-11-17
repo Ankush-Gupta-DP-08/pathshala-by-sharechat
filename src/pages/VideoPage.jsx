@@ -1,8 +1,9 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import './videoPage.css'
 
-export default function VideoPage({ title, author, videoLink }) {
-
+export default function VideoPage() {
+    const { title, author } = useParams();
     return (
         <div className='video-container'>
             <h1 className='title-1'>{title}</h1>

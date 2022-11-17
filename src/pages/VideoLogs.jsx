@@ -3,7 +3,16 @@ import Content from '../components/Content';
 import Option from '../components/Option'
 import './videoLogs.css'
 function VideoLogs() {
-    const [titles, setTitles] = useState([
+    // const [titles, setTitles] = useState([
+    //     "Engineering",
+    //     "Artificial Intelligence",
+    //     "Product",
+    //     "Design",
+    //     "Content & Creators",
+    //     "Life at ShareChat",
+    //     "Corporate"
+    // ])
+    const titles = [
         "Engineering",
         "Artificial Intelligence",
         "Product",
@@ -11,46 +20,38 @@ function VideoLogs() {
         "Content & Creators",
         "Life at ShareChat",
         "Corporate"
-    ])
+    ]
     let displayAllTitles, displayContent;
     const [optionSelected, setSelectedoption] = useState('Engineering');
-    const [content, setContent] = useState([
+    const [mainContent, setMainContent] = useState([
         {
-            videoTitle: `videoTitle-1 + ${optionSelected}`,
-            author: `author-1 + ${optionSelected}`
+            videoTitle: `videoTitle-1`,
+            author: `author-1`,
+            team: "Engineering"
         },
         {
-            videoTitle: `videoTitle-2 + ${optionSelected}`,
-            author: `author-2 + ${optionSelected}`
+            videoTitle: `videoTitle-2`,
+            author: `author-2`,
+            team: "Engineering"
         },
         {
-            videoTitle: `videoTitle-3 + ${optionSelected}`,
-            author: `author-3 + ${optionSelected}`
+            videoTitle: `videoTitle-3`,
+            author: `author-3`,
+            team: 'Artificial Intelligence'
         },
         {
-            videoTitle: `videoTitle-4 + ${optionSelected}`,
-            author: `author-4 + ${optionSelected}`
+            videoTitle: `videoTitle-4`,
+            author: `author-4`,
+            team: "Design"
         }
     ]);
+
+    const [content, setContent] = useState([]);
+
     useEffect(() => {
-        setContent([
-            {
-                videoTitle: `videoTitle-1 + ${optionSelected}`,
-                author: `author-1 + ${optionSelected}`
-            },
-            {
-                videoTitle: `videoTitle-2 + ${optionSelected}`,
-                author: `author-2 + ${optionSelected}`
-            },
-            {
-                videoTitle: `videoTitle-3 + ${optionSelected}`,
-                author: `author-3 + ${optionSelected}`
-            },
-            {
-                videoTitle: `videoTitle-4 + ${optionSelected}`,
-                author: `author-4 + ${optionSelected}`
-            }
-        ])
+        setContent(mainContent.filter(mc => {
+            return mc.team === optionSelected;
+        }))
     }, [optionSelected])
     displayAllTitles = titles.map((title, index) => {
         return (
