@@ -5,8 +5,30 @@ import VideoLogs from './pages/VideoLogs'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import VideoPage from './pages/VideoPage';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function App() {
+
+  const [medias, setMedias] = useState([]);
+
+  useEffect(() => {
+    getAllMedias();
+  }, []);
+
+  const getAllMedias = () => {
+    axios
+      .get(`http://localhost:4000/api/v1/media/all/`)
+      .then((result) => {
+        setMedias(result.data);
+      })
+      .catch((error) => {
+        setMedias([]);
+        console.log(error);
+        alert("Error happened!");
+      });
+  };
+
   return (
     <BrowserRouter>
       <Navbar />
@@ -17,13 +39,13 @@ function App() {
           </>
         } />
         <Route path='/upload' element={
-          <AdminUpload />
+          <AdminUpload getAllMedias={getAllMedias} />
         } />
         <Route path='/videoLogs' element={
           <VideoLogs />
         } />
         <Route path='/videoPage/:title/:author' element={
-          <VideoPage />
+          <VideoPage medias={medias} />
         } />
 
       </Routes>
