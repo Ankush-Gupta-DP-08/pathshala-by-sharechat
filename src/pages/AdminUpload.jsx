@@ -35,10 +35,13 @@ function AdminUpload() {
                             Team
                         </label>
                         <select className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e)=>{setData({...data,"team":e.target.value})}}>
-                            <option selected value="engineering">Engineering</option>
-                            <option value="product">Product</option>
-                            <option value="design">Design</option>
-                            <option value="ai_ml">AI / ML</option>
+                            <option selected value="Engineering">Engineering</option>
+                            <option value="Artificial Intelligence">Artificial Intelligence</option>
+                            <option value="Product">Product</option>
+                            <option value="Design">Design</option>
+                            <option value="Content & Creators">Content & Creators</option>
+                            <option value="Life at ShareChat">Life at ShareChat</option>
+                            <option value="Corporate">Corporate</option>
                         </select>
 
                     </div>
