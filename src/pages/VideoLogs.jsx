@@ -55,7 +55,7 @@ function VideoLogs() {
     }, [optionSelected])
     displayAllTitles = titles.map((title, index) => {
         return (
-            <Option key={index} title={title} setSelectedoption={setSelectedoption} />
+            <Option key={index} optionSelected={optionSelected} title={title} setSelectedoption={setSelectedoption} />
         )
     })
     displayContent = content.map((con, index) => {
