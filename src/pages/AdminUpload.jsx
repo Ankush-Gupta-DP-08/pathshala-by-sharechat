@@ -22,25 +22,28 @@ function AdminUpload({ getAllMedias }) {
         <div>
             <div className="w-2/3 m-auto text-left">
                 <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                    <div className="flex flex-wrap mb-4 place-content-between">
-                        <div className="mb-4 w-2/5">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
-                                Name
-                            </label>
-                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" onChange={(e) => {
-                                setData({ ...data, "name": e.target.value })
-                            }} />
-                        </div>
-                        <div className="mb-4 w-2/5">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" for="password">
-                                Team
-                            </label>
-                            <select className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e) => { setData({ ...data, "team": e.target.value }) }}>
-                                <option selected value="engineering">Engineering</option>
-                                <option value="product">Product</option>
-                                <option value="design">Design</option>
-                                <option value="ai_ml">AI / ML</option>
-                            </select>
+                <div className="flex flex-wrap mb-4 place-content-between">
+                    <div className="mb-4 w-2/5">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                            Name
+                        </label>
+                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" onChange={(e)=>{
+                            setData({...data,"name":e.target.value})
+                        }}/>
+                    </div>
+                    <div className="mb-4 w-2/5">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" for="password">
+                            Team
+                        </label>
+                        <select className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e)=>{setData({...data,"team":e.target.value})}}>
+                            <option selected value="Engineering">Engineering</option>
+                            <option value="Artificial Intelligence">Artificial Intelligence</option>
+                            <option value="Product">Product</option>
+                            <option value="Design">Design</option>
+                            <option value="Content & Creators">Content & Creators</option>
+                            <option value="Life at ShareChat">Life at ShareChat</option>
+                            <option value="Corporate">Corporate</option>
+                        </select>
 
                         </div>
                     </div>
