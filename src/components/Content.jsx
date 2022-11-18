@@ -10,8 +10,8 @@ function Content({ videoTitle, author }) {
                 <img src={'https://assets-global.website-files.com/616e938268c8f0a92cb2b540/626b2105eca8a62c25bbd9f0_youtube%20thumbnail%20size%20and%20best%20practices%20by%20veed%20studio.jpg'} alt={"Thumbnail"} />
             </div>
             <div>
-                <h1 className='title'>{videoTitle}</h1>
-                <h3 className='author'>{author}</h3>
+                <h1 className='ont-medium leading-tight text-5xl mt-0 mb-2 title'>{videoTitle}</h1>
+                <h3 className='ont-medium leading-tight text-3xl mt-0 mb-2 author'>by {author}</h3>
             </div>
         </Link>
     )

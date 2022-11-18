@@ -3,15 +3,7 @@ import Content from '../components/Content';
 import Option from '../components/Option'
 import './videoLogs.css'
 function VideoLogs() {
-    // const [titles, setTitles] = useState([
-    //     "Engineering",
-    //     "Artificial Intelligence",
-    //     "Product",
-    //     "Design",
-    //     "Content & Creators",
-    //     "Life at ShareChat",
-    //     "Corporate"
-    // ])
+
     const titles = [
         "Engineering",
         "Artificial Intelligence",
@@ -55,7 +47,7 @@ function VideoLogs() {
     }, [optionSelected])
     displayAllTitles = titles.map((title, index) => {
         return (
-            <Option key={index} title={title} setSelectedoption={setSelectedoption} />
+            <Option key={index} optionSelected={optionSelected} title={title} setSelectedoption={setSelectedoption} />
         )
     })
     displayContent = content.map((con, index) => {

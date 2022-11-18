@@ -19,7 +19,8 @@ img {
     margin: 2vh;
 }
 
-.title {
+.title,
+.author {
     margin-top: 2vh;
     margin-left: 2vw;
     color: rgb(242, 136, 32);
@@ -27,4 +28,9 @@ img {
 
 .author {
     color: #9560ba
+}
+
+.row:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.01);
 }
