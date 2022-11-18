@@ -3,15 +3,7 @@ import Content from '../components/Content';
 import Option from '../components/Option'
 import './videoLogs.css'
 function VideoLogs() {
-    // const [titles, setTitles] = useState([
-    //     "Engineering",
-    //     "Artificial Intelligence",
-    //     "Product",
-    //     "Design",
-    //     "Content & Creators",
-    //     "Life at ShareChat",
-    //     "Corporate"
-    // ])
+
     const titles = [
         "Engineering",
         "Artificial Intelligence",
